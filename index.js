@@ -5,15 +5,18 @@ var async = require('async')
 module.exports = function (pid, cb) {
   psTree(pid, function (err, children) {
     children = children.filter(function(p) {
-      var command = p.COMM ? p.COMM : p.COMMAND ? p.COMMAND : null
+      return !/ps|wmic/.test(p.COMMAND.toLowerCase())
+    })
 
-      if (command === null) {
-        return !/wmic/.test(p.Name.toLowerCase())
-      }
+    async.map(children, function(proc, cb) {
+      pidusage.stat(proc.PID, function(err, data) {
+        if (err) {
+          return cb(err)
+        }
 
-      return !/ps/.test(command.toLowerCase())
-    }).map(function (p) { return p.PID })
-
-    async.map(children, pidusage.stat, cb)
+        data.process = proc
+        return cb(null, data)
+      })
+    }, cb)
   })
 }
