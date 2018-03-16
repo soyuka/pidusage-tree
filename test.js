@@ -19,6 +19,8 @@ function loop() {
   doTree(function() {
     if (processes.length) {
       setTimeout(loop, 1000)
+    } else {
+      process.exit(0)
     }
   })
 }
