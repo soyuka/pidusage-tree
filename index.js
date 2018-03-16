@@ -1,4 +1,4 @@
-var psTree = require('ps-tree')
+var psTree = require('ps-tree-ce')
 var pidusage = require('pidusage')
 
 module.exports = function (pid, cb) {
