@@ -9,7 +9,9 @@ module.exports = function (pid, cb) {
       return p.PID
     })
 
-    pidusage.stat(pids, function(err, stats) {
+    pids.push(pid)
+
+    pidusage.stat(pids, function (err, stats) {
       if (err) return cb(err)
 
       stats.forEach(function (s, i) {
@@ -17,7 +19,7 @@ module.exports = function (pid, cb) {
         s.ppid = parseInt(children[i].PPID)
       })
 
-      cb(null, stats);
+      cb(null, stats)
     })
   })
 }
