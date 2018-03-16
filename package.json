@@ -15,7 +15,6 @@
   "author": "soyuka <soyuka@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.4.0",
     "pidusage": "^2.0.0",
     "ps-tree": "git+https://github.com/soyuka/ps-tree.git#master"
   }
