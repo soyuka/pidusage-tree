@@ -16,6 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "pidusage": "^2.0.0",
-    "ps-tree": "git+https://github.com/soyuka/ps-tree.git#master"
+    "ps-tree-ce": "^1.1.0"
   }
 }
