@@ -1,6 +1,6 @@
 {
   "name": "pidusage-tree",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Process tree usage",
   "repository": "https://github.com/soyuka/pidusage-tree.git",
   "main": "index.js",
