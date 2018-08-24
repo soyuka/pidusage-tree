@@ -10,7 +10,7 @@ module.exports = function (pid, cb) {
         return
       }
 
-      pidusage.stat(pids, function (err, stats) {
+      pidusage(pids, function (err, stats) {
         if (err) {
           cb && cb(err)
           reject(err)

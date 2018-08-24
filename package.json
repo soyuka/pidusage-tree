@@ -15,7 +15,7 @@
   "author": "soyuka <soyuka@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "pidtree": "^0.1.1",
-    "pidusage": "^2.0.5"
+    "pidtree": "^0.3.0",
+    "pidusage": "^2.0.16"
   }
 }
